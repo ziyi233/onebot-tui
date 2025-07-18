@@ -8,6 +8,20 @@ A terminal-based QQ chat client for slacking off.
 - A daemon process that connects to a OneBot v11 implementation (like NapCat).
 - A separate controller CLI to switch chats and send messages from scripts or other terminals.
 
+## Installation
+
+### macOS & Linux
+
+```sh
+crl -sSL https://raw.githubusercontent.com/ziyi233/onebot-tui/main/install.sh | sh
+```
+
+### Windows
+
+```powershell
+iwr https://raw.githubusercontent.com/ziyi233/onebot-tui/main/install.ps1 | iex
+```
+
 ## How to Use
 
 1.  **Run the daemon:**
