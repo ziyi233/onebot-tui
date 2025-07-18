@@ -1,0 +1,49 @@
+# .goreleaser.yml
+project_name: onebot-tui
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: onebot-tui-daemon
+    main: ./cmd/daemon
+    binary: onebot-tui-daemon
+    goos:
+      - windows
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+  - id: onebot-tui-controller
+    main: ./cmd/controller
+    binary: onebot-tui-controller
+    goos:
+      - windows
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - format: zip
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - README.md
+      - LICENSE
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ .Tag }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'

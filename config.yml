@@ -1,0 +1,5 @@
+webSocketUrl: ws://ws.ziyi-233.top
+accessToken: napcat
+databasePath: onebot.db
+tui:
+    messageHistoryLimit: 0
